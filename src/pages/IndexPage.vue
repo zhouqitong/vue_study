@@ -93,7 +93,7 @@
         boardList: [
           {
             title: '开放产品',
-            description: '开放产品是一款开放产品',
+            description: '流量分析工具',
             id: 'car',
             toKey: 'analysis',
             saleout: false

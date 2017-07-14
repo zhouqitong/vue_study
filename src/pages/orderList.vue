@@ -38,7 +38,7 @@
 <script>
 import VSelection from '../components/base/selection'
 import VDatePicker from '../components/base/datepicker'
-import _ from 'lodash'
+//import _ from 'lodash'
 export default {
   components: {
     VSelection,
@@ -46,6 +46,7 @@ export default {
   },
   data () {
     return {
+        lodash:this.$root.lodash,
       query: '',
       productId: 0,
       startDate: '',
@@ -146,7 +147,7 @@ export default {
       else if (this.currentOrder === 'desc') {
         this.currentOrder = 'asc'
       }
-      this.tableData = _.orderBy(this.tableData, headItem.key, this.currentOrder)
+      this.tableData = this.lodash.orderBy(this.tableData, headItem.key, this.currentOrder)
     }
   },
   mounted () {

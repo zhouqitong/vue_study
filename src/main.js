@@ -6,8 +6,12 @@ import VueResource from 'vue-resource'
 import IndexPage from "./pages/IndexPage.vue"
 import Layout from "./components/Layout.vue"
 import DetailPage from "./pages/details.vue"
+import OrderListPage from "./pages/orderList.vue"
 import DetailAnaPage from "./pages/details/analysis.vue"
-import OrderListPage from './pages/orderList.vue'
+import DetailCouPage from './pages/details/count.vue'
+import DetailForPage from './pages/details/forecast.vue'
+import DetailPubPage from './pages/details/publish.vue'
+import _ from "lodash"
 Vue.use(VueRouter);
 Vue.use(VueResource);
 let router = new VueRouter({
@@ -30,18 +34,18 @@ let router = new VueRouter({
           path: 'analysis',
           component: DetailAnaPage
         },
-        // {
-        //   path: 'count',
-        //   component: DetailCouPage
-        // },
-        // {
-        //   path: 'forecast',
-        //   component: DetailForPage
-        // },
-        // {
-        //   path: 'publish',
-        //   component: DetailPubPage
-        // }
+        {
+          path: 'count',
+          component: DetailCouPage
+        },
+        {
+          path: 'forecast',
+          component: DetailForPage
+        },
+        {
+          path: 'publish',
+          component: DetailPubPage
+        }
       ]
     }
   ]
@@ -50,5 +54,10 @@ new Vue({
   el: '#app',
   router,
   template:"<Layout/>",
+  data(){
+    return {
+      lodash:_
+    }
+  },
   components:{Layout}
 });
